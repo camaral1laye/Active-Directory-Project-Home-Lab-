@@ -18,3 +18,114 @@ active-directory-homelab/
 │   └── run-atomic-tests.ps1
 └── notes/
     └── learning-journal.md
+🗺️ Phase 1: Topology + Initial Installations
+✅ Topology Overview
+Here's the visual and structural layout for your lab setup:
+
+                         +-------------------+
+                         |  Domain Controller |
+                         | Windows Server   |
+                         | AD + DNS + DHCP    |
+                         | IP: 192.168.1.10   |
+                         +-------------------+
+                                  |
+         ---------------------------------------------------
+         |                       |                         |
++------------------+   +------------------+      +------------------+
+|    Kali Linux Pi |   |   Splunk Server  |      |  Domain-Joined   |
+| (Attacker Node)  |   |   (SIEM Host)    |      |  Windows Client  |
+| IP: 192.168.1.11 |   | IP: 192.168.1.12 |      | IP: 192.168.1.13 |
++------------------+   +------------------+      +------------------+
+
+All VMs will be on the same custom VMnet (e.g., VMnet2 - Host-Only or Bridged) to simulate a local domain.
+
+💻 VMs to Create & Install
+🖥️ 1. Domain Controller (DC)
+VM Name: DC-Homelab
+
+OS: Windows Server 2019 or 2022
+
+Specs: 2 CPU, 4 GB RAM, 60 GB Disk
+
+Setup:
+
+Rename PC (e.g., DC01)
+
+Set static IP: 192.168.56.10
+
+Install Active Directory Domain Services
+
+Promote to DC with forest name: homelab.local
+
+Add DNS and DHCP roles (optional)
+
+🖥️ 2. Kali Linux (Attacker Node)
+VM Name: Kali-Attacker
+
+OS: Kali Linux
+
+Specs: 2 CPU, 2-4 GB RAM, 40 GB Disk
+
+Setup:
+
+Set static IP: 192.168.56.11
+
+Install:
+
+Nmap
+
+BloodHound
+
+CrackMapExec
+
+Mimikatz
+
+Metasploit
+
+Neo4j
+
+🖥️ 3. Splunk Server
+VM Name: Splunk-SIEM
+
+OS: Ubuntu Server or Windows Server (your choice)
+
+Specs: 2-4 CPU, 4-8 GB RAM, 80 GB Disk
+
+Setup:
+
+Static IP: 192.168.56.12
+
+Install Splunk Enterprise (Free license)
+
+Open Web UI at http://192.168.56.12:8000
+
+🖥️ 4. Windows Client
+VM Name: WinClient01
+
+OS: Windows 10/11
+
+Specs: 2 CPU, 4 GB RAM, 50 GB Disk
+
+Setup:
+
+Set static IP: 192.168.56.13
+
+Join homelab.local domain
+
+Install Splunk Universal Forwarder (later)
+
+Enable verbose logging for security, powershell, etc.
+
+✅ Next Steps
+I’ll generate a network topology diagram image based on the above.
+
+Then I’ll help you configure VMnet for static IP routing inside VMware.
+
+Finally, we’ll begin installing VM #1: Domain Controller.
+
+
+
+
+
+
+
