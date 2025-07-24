@@ -51,7 +51,7 @@ Setup:
 
 Rename PC (e.g., DC01)
 
-Set static IP: 192.168.56.10
+Set static IP: 192.168.1.10
 
 Install Active Directory Domain Services
 
@@ -68,7 +68,7 @@ Specs: 2 CPU, 2-4 GB RAM, 40 GB Disk
 
 Setup:
 
-Set static IP: 192.168.56.11
+Set static IP:192.168.1.11
 
 Install:
 
@@ -93,7 +93,7 @@ Specs: 2-4 CPU, 4-8 GB RAM, 80 GB Disk
 
 Setup:
 
-Static IP: 192.168.56.12
+Static IP: 192.168.1.12
 
 Install Splunk Enterprise (Free license)
 
@@ -108,7 +108,7 @@ Specs: 2 CPU, 4 GB RAM, 50 GB Disk
 
 Setup:
 
-Set static IP: 192.168.56.13
+Set static IP:  192.168.1.13
 
 Join homelab.local domain
 
