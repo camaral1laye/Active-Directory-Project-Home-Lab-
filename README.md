@@ -19,3 +19,23 @@ Detection Insights
 
 Future Work
 
+active-directory-homelab/
+├── README.md
+├── architecture/
+│   └── topology-diagram.png
+├── setup/
+│   ├── ad-domain-controller.md
+│   ├── splunk-install.md
+│   ├── kali-linux-setup.md
+│   ├── atomic-red-team-usage.md
+│   └── raspberry-pi-config.md
+├── telemetry/
+│   ├── attack-simulations/
+│   ├── logs/
+│   └── detection-summaries.md
+├── scripts/
+│   ├── install-splunk.sh
+│   ├── configure-ad.ps1
+│   └── run-atomic-tests.ps1
+└── notes/
+    └── learning-journal.md
