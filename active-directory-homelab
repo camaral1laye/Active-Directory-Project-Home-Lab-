@@ -116,13 +116,49 @@ Install Splunk Universal Forwarder (later)
 
 Enable verbose logging for security, powershell, etc.
 
-✅ Next Steps
-I’ll generate a network topology diagram image based on the above.
+🌐 Step-by-Step: Configure a Custom NAT Network for All VMs
+✅ 1. Open Virtual Network Editor
+Open VMware Workstation (or VMware Pro).
 
-Then I’ll help you configure VMnet for static IP routing inside VMware.
+Go to the top menu:
+Edit → Virtual Network Editor
 
-Finally, we’ll begin installing VM #1: Domain Controller.
+Click "Change Settings" (run as admin if prompted).
 
+✅ 2. Create a New Custom NAT Network
+Click "Add Network"
+
+Choose an unused network (e.g., VMnet2 or VMnet3)
+
+Click OK or Next
+
+✅ 3. Configure the NAT Settings
+For example, if you're using VMnet2:
+
+Network Type: NAT
+
+Subnet IP: 192.168.1.0
+
+Subnet Mask: 255.255.255.0
+
+Use local DHCP: ✅ (Optional — disable if you want static IP only)
+
+Gateway IP: Auto-assigned (e.g., 192.168.1.2)
+
+Click Apply
+
+You can also disable DHCP and assign static IPs inside each VM instead.
+
+✅ 4. Assign VMnet2 to All VMs
+For each VM (DC, Kali, Splunk, Windows Client):
+
+Right-click the VM → Settings
+
+Go to Network Adapter
+
+Select: Custom: Specific virtual network → Choose VMnet2
+
+Click OK
 
 
 
