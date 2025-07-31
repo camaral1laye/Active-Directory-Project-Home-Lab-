@@ -159,6 +159,8 @@ Go to Network Adapter
 Select: Custom: Specific virtual network → Choose VMnet2
 
 Click OK
+✅ 5. Assign Static IPs Inside Each VM
+✅ 6. Test Network Connectivity
 
 
 
